@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# python_basics
-Python fundamentals and exercises focused on IT and networking use cases.
-=======
 # Python Basics 
 
 This repository contains Python exercises and practice scripts created as part of my **Cloud and Network Engineering degree**. My intention is to strengthen my programming fundamentals while applying Python to IT, networking, and automation scenarios.
