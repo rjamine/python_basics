@@ -34,12 +34,14 @@ This file captures reflections, questions, practice notes, and wtf moments from 
    - He is also part of the python software foundation since 2009 I think.
 --- 
 
-## Editor and Tools that make this possible and fun: 
-
-1. Emacs
- - python major mode
- - lsp (python hook)
-
+## Programming Environment Preference
+1. Text Editor: Emacs
+   - python major mode (default behavior with .py files) 
+   - lsp mode (client) is built in to emacs 29.x (bookworm)
+   - company mode (autocompletion UI)
+   - flycheck python-mypy 
+   - direnv (emacs integration for direnv) 
+2. Terminal: xterm (debian 12 bookwork default) 
 --- 
 
 ## Designer and History
@@ -71,6 +73,9 @@ This file captures reflections, questions, practice notes, and wtf moments from 
    - Nuitka (ahead-of-time compiler not a Virtual Machine)
 4. Debian ships with python3: CPython's execution pipeline: 
    - .py source > AST (parser) > Bytecode (.pyc in __pycache__) > Cpython VM (ceval loop in C) > Native Machine Instructions
+	 1. .py source/AST: 
+	 2. Bytecode (.pyc)
+	 3. CPython VM
 --- 
 
 
