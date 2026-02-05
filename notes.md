@@ -4,11 +4,6 @@ This file captures reflections, questions, practice notes, and wtf moments from 
 
 --- 
 
-## General Notes 
-
-
----
-
 ## OS specifics: Debian GNU/Linux 12 (bookworm)
 1. Mistakes:
   - don't remove apt package python3, I crashed and corrupted my gdm3 + i3 session, had to reinstall both in root shell. I thought python3 was an older version of python3.11 and removed it, not fun. Learned a couple neat commands though (note: none of this is necessary after recovering your machine state, but I had an itch I needed to scratch for a couple hours) **sad face**: 
@@ -44,9 +39,7 @@ This file captures reflections, questions, practice notes, and wtf moments from 
 2. Terminal: xterm (debian 12 bookwork default) 
 --- 
 
-## Designer and History
-
-### Designer: Guido van Rossum
+## Designer: Guido van Rossum
 1. 
  - name origin: monty python the flying circus TV show
  - python captures the essence of community driven development where everyone's voice is heard just like the cast of a Monty Python sketch. Its all about bringing people together, laughing at jokes and growing together as a global community. - some article by some guy I forgot that I will have to track down and give credit too. 
@@ -56,28 +49,24 @@ This file captures reflections, questions, practice notes, and wtf moments from 
 
 ## Python Interpreter 
 
-1. Python's Design Documentation Evolution: 
+1. Some of Pythons Design Documentation that are essential to CPython: 
    - PEP 339: Design of the Cpython Compiler (parses and prepares .py files) https://peps.python.org/pep-0339/
    - PEP 511: API for code transformers (bytecode transformers) https://peps.python.org/pep-0511/
    - PEP 659: Specializing Adaptive Interpreter 3.11+ https://peps.python.org/pep-0659/
    - PEP 523: Adding a frame evaluation API to CPython (custom evaluation loop) https://peps.python.org/pep-0523/
    - etc.,
 2. Execution Model:
-   - Python source (.py) > Bytecode (.pyc or whatever your VM implentation does: platform independent) > PVM (Python Virtual Machine) > Native Machine Instructions (interpreted at runtime)
-3. Virtual Machine Alternatives (all follow the python language spec):
+   - Python source (.py) > parsed AST tree > Bytecode (.pyc for CPython or whatever VM your using is) > bytecode intepreter 
+3. Virtual Machine Options (all follow the python language spec):
    - Cpython
    - PyPy
    - Jython (Python on the JVM: Java)
    - IronPython (Python on .NET)
    - MicorPython (Virtual Machine optimized for microcontrollers/embedded)
    - Nuitka (ahead-of-time compiler not a Virtual Machine)
-4. Debian ships with python3: CPython's execution pipeline: 
-   - .py source > AST (parser) > Bytecode (.pyc in __pycache__) > Cpython VM (ceval loop in C) > Native Machine Instructions
-	 1. .py source/AST: 
-	 2. Bytecode (.pyc)
-	 3. CPython VM
+4. Debian ships with python3 which uses CPython's execution pipeline: 
+   - .py source > AST (parser) > Bytecode.pyc > Cpython VM (ceval loop in C) > Native Machine Instructions
 --- 
-
 
 
 *Created by RJ Amine - Cloud and Network Engineering Student, IT & Networking Enthusiast* 
