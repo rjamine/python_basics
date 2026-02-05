@@ -10,16 +10,22 @@
 
 ---
 
-## source.py output
+## source.py: (just some data on disk) 
 
 x = int(2 + 3) 
 print(x)
 
 ---
 
-## tokenization.py output
+## tokenization.py: 
 
-TokenInfo(type=63 (ENCODING), string='utf-8', start=(0, 0), end=(0, 0), line='')
+with open("source.py", "rb") as f:
+    for token in tokenize.tokenize(f.readline):
+        print(token)
+
+1. Output
+
+Tokeninfo(type=63 (ENCODING), string='utf-8', start=(0, 0), end=(0, 0), line='')
 TokenInfo(type=1 (NAME), string='import', start=(1, 0), end=(1, 6), line='import builtins\n')
 TokenInfo(type=1 (NAME), string='builtins', start=(1, 7), end=(1, 15), line='import builtins\n')
 TokenInfo(type=4 (NEWLINE), string='\n', start=(1, 15), end=(1, 16), line='import builtins\n')
@@ -42,7 +48,19 @@ TokenInfo(type=0 (ENDMARKER), string='', start=(5, 0), end=(5, 0), line='')
 
 ---
 
-## ASTparse.py output 
+## ASTparse.py:
+
+import ast 
+
+source = """
+x = 2 + 3
+print(x)
+"""
+
+tree = ast.parse(source)
+print(ast.dump(tree, indent=2)) 
+
+1. Output 
 
 Module(
   body=[
@@ -60,6 +78,20 @@ Module(
           Name(id='x', ctx=Load())],
         keywords=[]))],
   type_ignores=[])
+
+---
+
+## bytecode.py 
+
+from ASTparse import source
+
+code = compile(source, filename="source.py", mode="exec")
+print(code)
+
+import dis
+dis.dis(code)
+
+1. Output: 
 Module(
   body=[
     Assign(
@@ -77,10 +109,6 @@ Module(
         keywords=[]))],
   type_ignores=[])
   
----
-
-## bytecode.py output 
-
 <code object <module> at 0x7f3c97e056f0, file "source.py", line 1>
   0           0 RESUME                   0
 
