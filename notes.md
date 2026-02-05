@@ -57,7 +57,7 @@ This file captures reflections, questions, practice notes, and wtf moments from 
 ## Python Interpreter 
 
 1. Python's Design Documentation Evolution: 
-   - PEP 339: Cpython Compiler https://peps.python.org/pep-0339/
+   - PEP 339: Design of the Cpython Compiler (parses and prepares .py files) https://peps.python.org/pep-0339/
    - PEP 511: API for code transformers (bytecode transformers) https://peps.python.org/pep-0511/
    - PEP 659: Specializing Adaptive Interpreter 3.11+ https://peps.python.org/pep-0659/
    - PEP 523: Adding a frame evaluation API to CPython (custom evaluation loop) https://peps.python.org/pep-0523/
