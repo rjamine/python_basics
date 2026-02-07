@@ -1,5 +1,7 @@
 # Python Basics 
 
+**Disclaimer** None of this was vibe coded, only ChatGPT was used to better help understand python design/implementations, and everything is cross-referenced @ https://docs.python.org and I include in every directories "notes.md" file where I found it in the python documentation. 
+
 This repository contains Python exercises and practice scripts created as part of my **Cloud and Network Engineering degree**. My intention is to strengthen my programming fundamentals while applying Python to IT, networking, and automation scenarios.
 
 ---
@@ -27,7 +29,7 @@ The repository is organized by topic:
 - **pythons_executionModel/executionPipeline_output.md** 
 - **etc.,**
 
-**pythonTutorial** is literally from https://docs.python.org/3.11/tutorial/ and for guidance each directory has either a -notstarted, -started, -reviewed, -done, at the end of each direcotry name, -reviewed means it was enough to just read through the text. 
+**pythonTutorial** is literally from https://docs.python.org/3.11/tutorial/ and for guidance each directory has either a -notstarted, -started, -reviewed, , -workingProgress, -done, at the end of each direcotry name, -reviewed means it was enough to just read through the text. 
 
 A 'notes.md' file is included in some directories to track questions, reflections, and tasks related to python and its application to IT/networking labs.
 
