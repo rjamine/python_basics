@@ -1,4 +1,4 @@
-import tokenize, io, ast, dis
+import tokenize, io, ast, dis, sys
 
 stringliteral = "object1"
 
@@ -37,10 +37,24 @@ dis.dis(code)
 #               8 RETURN_VALUE
 # Notice how LOAD_CONST mentions the "value," and STORE_NAME mentions the name binding/reference, but no type, becaue in python 'object1' is implied to be a string and you can see that after looking at the AST parse and the '' characters, you can mess around with what tree = ast.parse('x = 5 + 9') for example and see what happens with the output
 
-# we can 
+# We can inspect the bytecode of the string object to easier see when it 'becomes' an object and how much an object costs 
 
-print("Code Object:", code)
-print("Byte size:", len(code.co_code))
-print("Bytecode:", code.co_code)
-print("Constants:", code.co_consts)
-print("Names:", code.co_names)
+print("Bytecode object address of 'stringliteral':", code, "bytes")
+print("Bytecode object:", code.co_code, "Size:", len(code.co_code), "bytes")
+print("Constants:", code.co_consts, "Size:", len(code.co_consts), "bytes")
+print("Name:", code.co_names, "Size:", len(code.co_names), "bytes")
+print("String Object Runtime Address:", id(stringliteral), "Size:", len(stringliteral), "bytes")
+print("'String Object + metadata:", sys.getsizeof(stringliteral), "bytes")
+
+# Above printing output: 
+# Bytecode object address of 'stringliteral': <code object <module> at 0x7fdefa957ec0, file "Objects", line 1> bytes
+# Bytecode: b'\x97\x00d\x00Z\x00d\x01S\x00' Size: 10 bytes
+# Constants: ('object1', None) Size: 2 bytes
+# Name: ('stringliteral',) Size: 1 bytes
+# String Object Runtime Address: 140595663307632 Size: 7 bytes
+# 'String Object + metadata: 56 bytes
+
+# Now I'm still new to python, so maybe my wording is wrong somewhere, but it still shows that before runtime at tokenization and AST parsing an 'object' is still just data to use for compilation, you can clearly see a 'name' and 'type,' but no id/identity because the object does not exist, and when it is compiled into bytecode you can see the instructions like LOAD_CONST and STORE_NAME which each cost 1-2 bytes, and by pythons own definition in its spec "every object has an identity, a type, and a value," and we can see that you can't do this: 
+# print(id(x))
+# x = "does this run"
+# because the potential string object "does this run" does not exist until its executed and once its executed it lives somewhere in memory with an address.
