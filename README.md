@@ -1,6 +1,11 @@
-# Python Basics 
+# Python Basics
+This file contains material copied from the Python documentation: [https://docs.python.org/3.11/tutorial/]
 
-**Disclaimer** None of this was vibe coded, only ChatGPT was used to better help understand python design/implementations, and everything is cross-referenced @ https://docs.python.org and I include in every directories "notes.md" file where I found it in the python documentation. 
+ © Copyright 2001-2025, Python Software Foundation.
+This page is licensed under the Python Software Foundation License Version 2.
+
+
+**Disclaimer** None of this was vibe coded, only ChatGPT was used to better help understand python design/implementations, and everything is cross-referenced @ [https://docs.python.org] and I include in every directories "notes.md" file where I found it in the python documentation. 
 
 This repository contains Python exercises and practice scripts created as part of my **Cloud and Network Engineering degree**. My intention is to strengthen my programming fundamentals while applying Python to IT, networking, and automation scenarios.
 
