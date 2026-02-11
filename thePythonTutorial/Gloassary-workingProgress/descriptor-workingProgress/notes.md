@@ -1,0 +1,1 @@
+# Descriptor HowTo Guide: [https://docs.python.org/3.11/howto/descriptor.html#descriptorhowto] - Understanding descriptors is a key to a deep understanding of Python because they are the basis for many features including functions, methods, properties, class methods, static methods, and reference to super classes.
