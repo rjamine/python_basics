@@ -1,5 +1,3 @@
-# namespace areas: local, global, built-in, nested in object methods
-
 scope = "will be called third"
 
 def  outer():
