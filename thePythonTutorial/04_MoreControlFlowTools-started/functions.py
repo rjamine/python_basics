@@ -23,21 +23,23 @@ def pass_or_fail_test(score, failed=79, passed=80, exceeded=81):
 
 # a clearer example, try putting whatever in the func arg call       
 def jokes(name, joke, /, *, blutofjoke="netanyahu", **status):
-    print("-- What does", joke, "rhyme with", name, "?")
+    print("-- What does", joke, "rhyme with,", name, "?")
     for num in blutofjoke:
         print(num)
     for kw in status:
         print(kw, ":", status[kw])
 
-jokes("bubba", "lying ahh", status="im not suicidal") #works just fine 
+jokes("partna", "lying ahh", status="im not suicidal\n") #works just fine 
 # jokes("partna", "liar", "netanyahu", "im not suicidal") does not run, **keyword syntax enforces dict form so you need key=value
 
-def hotness_scale(name="rj", **hotness):
-   for name in range(0, 10):
-      print(name)
-   for num in hotness:
-     print(num, ":", hotness[num]) 
-#    for num in scaling:
-#       print(scaling[num])
+def hotness_scale(hotScore, /, *, name="bezos"):
+   for num in range(0, 10):
+      match hotScore:
+          case 0 | 1 | 2 | 3 | 4 | 5 | 6:
+              print(name, "is not hot:", hotScore, "/ 10")
+              break
+          case 7 | 8 | 9 | 10:
+              print(name, "is hot:", hotScore, "/ 10")
+              break
 
-hotness_scale("rj", hotness="0")
+hotness_scale(0, name="unclerukus")
