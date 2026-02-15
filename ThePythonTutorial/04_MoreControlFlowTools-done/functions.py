@@ -43,3 +43,4 @@ def hotness_scale(hotScore, /, *, name="bezos"):
               break
 
 hotness_scale(0, name="unclerukus")
+
