@@ -11,3 +11,5 @@ rgb_sample = [255, 165, 13]
 #print(format_rgb(rgb_sample))
 # help(help)
 #---
+x = "string"
+print(f"hello mate ({','.join(map(str, rgb_sample))})")

@@ -7,7 +7,7 @@ def minutes_to_hours(minutes):
 # You may alter the code below to test your solution or print help documentation.
 # Only the minutes_to_hours function will be graded for this assessment.
 
-mins = 60
-#print(minutes_to_hours(mins))
+mins = 75
+print(minutes_to_hours(mins))
 # help(help)
 

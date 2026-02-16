@@ -22,24 +22,30 @@
 # the expected return is
 # 
 # 192.168.1.100 and 192.168.2.200 are not in the same subnet
-#def same_subnet(ip1, ip2, subnet_mask):
-#    # convert IP addresses to binary strings
-#    ip1_bin = ''.join([format(int(x), '08b') for x in ip1.split('.')])
-#    ip2_bin = ''.join([format(int(x), '08b') for x in ip2.split('.')])
-#
-#    # convert subnet mask to binary string
-#    subnet_bin = ''.join([format(int(x), '08b') for x in subnet_mask.split('.')])
-#
-#    # get network address portion for both IP addresses
-#    subnet_len = subnet_bin.count('1')
-#    network1_bin = ip1_bin[:subnet_len]
-#    network2_bin = ip2_bin[:subnet_len]
-#
-#    # Predefined statement indicating if IP addresses are in the same subnet
-#    x = f"{ip1} and {ip2} are in the same subnet"
-#    y = f"{ip1} and {ip2} are not in the same subnet"
-#    
+def same_subnet(ip1, ip2, subnet_mask):
+    # convert IP addresses to binary strings
+    ip1_bin = ''.join([format(int(x), '08b') for x in ip1.split('.')])
+    ip2_bin = ''.join([format(int(x), '08b') for x in ip2.split('.')])
+
+    # convert subnet mask to binary string
+    subnet_bin = ''.join([format(int(x), '08b') for x in subnet_mask.split('.')])
+
+    # get network address portion for both IP addresses
+    subnet_len = subnet_bin.count('1')
+    network1_bin = ip1_bin[:subnet_len]
+    network2_bin = ip2_bin[:subnet_len]
+    # Predefined statement indicating if IP addresses are in the same subnet
+    x = f"{ip1} and {ip2} are in the same subnet"
+    y = f"{ip1} and {ip2} are not in the same subnet"
+    
 #    # Write a conditional expression to check if both IP addresses are in the same subnet
 #    # and return the appropriate string output x or y.
+    if network1_bin == network2_bin:
+        return x
+    elif network1_bin != network2_bin:
+        return y
+    else:
+        return print("you did something wrong")
 #    # Write your code here.
+print(same_subnet('192.168.2.45', '192.168.2.200', '255.255.255.0'))
 #---
