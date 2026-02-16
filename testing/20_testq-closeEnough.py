@@ -23,15 +23,15 @@
 #
 #[0]
 
-#def identify_high_cpu(cpu_list):
-#    # Write your code here.
-#    pass
-
+def identify_high_cpu(cpu_list):
+# Write your code here.
 # You may alter the code below to test your solution or print help documentation.
 # Only the identify_high_cpu function will be graded for this assessment.
+    indexes = [i for i, usage in enumerate(cpu_list) if usage > 90]
+    return indexes
 
-# cpu_list = [85.0, 92.5, 88.0, 95.2]
-# print(identify_high_cpu(cpu_list))
+cpu_list = [85.0, 92.5, 88.0, 95.2]
+print(identify_high_cpu(cpu_list))
 # help(help)
 #---
 
