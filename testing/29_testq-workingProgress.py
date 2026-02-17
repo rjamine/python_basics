@@ -23,21 +23,27 @@
 #the expected return is
 #
 #2023-12-20 02:00:00
-#from datetime import datetime
+from datetime import datetime
 #
-#def find_latest(submissions):
-#    # Specify a date format
-#    date_format = '%m/%d/%Y %I:%M %p'
-#        
-#    # Convert string values into datetime objects.
-#    
-#    # Determine and return latest
-#    pass
-
+def find_latest(submissions):
+    # Specify a date format
+    original_format = '%m/%d/%Y %I:%M %p'
+    dates = [datetime.strptime(s, original_format) for s in submissions]
+    latestDate = max([datetime.strftime(date, "%Y-%m-%d %H:%M:%S") for date in dates])
+    return latestDate
+    # Convert string values into datetime objects.
+ #   for dateTimeString in submissions:
+#     dateTimeObject = datetime.strptime(dateTimeString, original_format) 
+    #convert_datetimeObject = dateTimeObject.strftime("%y-%m-%d %h:%m:%s")
+#    finalResult = [i for i, dateAndTimes in submissions datetime.strptime(dateAndTimes, original_format)]
+#    return finalResult 
+    # Determine and return latest
+#    return convert_datetimeObject 
 # You may alter the code below to test your solution or print help documentation.
 # Only the find_latest function will be graded for this assessment.
 
-# submission_timestamps = ['12/15/2023 08:45 AM', '12/14/2023 03:30 PM', '12/16/2023 11:20 AM', '12/13/2023 06:15 PM']
-# print(find_latest(submission_timestamps))
+#indexes = [i for i, usage in enumerate(cpu_list) if usage > 90]
+submission_timestamps = ['12/15/2023 08:45 AM', '12/14/2023 03:30 PM', '12/16/2023 11:20 AM', '12/13/2023 06:15 PM']
+print(find_latest(submission_timestamps))
 # help(datetime.strptime)
 #---
