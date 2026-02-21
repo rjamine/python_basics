@@ -28,8 +28,8 @@ def scan_ports(x):
         open_ports = []  
         # Iterate over ports checking the connection and appending the port status to the list.
         for i in range(0, x+1):
-            conn = socketObject.connect_ex((target_IP, i))
-            if(conn == 0):
+            conn = socketObject.connect_ex(target_IP, i)
+            if conn == 0:
                   open_ports.append((i, 'OPEN'))
             else:
                   open_ports.append((i, 'CLOSED'))

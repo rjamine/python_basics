@@ -8,7 +8,7 @@ def format_rgb(rgb):
 # Only the format_rgb function will be graded for this assessment.
 
 rgb_sample = [255, 165, 13]
-#print(format_rgb(rgb_sample))
+print(format_rgb(rgb_sample))
 # help(help)
 #---
 x = "string"
